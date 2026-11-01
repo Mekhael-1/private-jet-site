@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Support & Concierge — AURUM Jets</title>
+<meta name="description" content="24/7 dedicated concierge and client support for AURUM Jets. Live operational tracking, flight coordination, and VIP dispatch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+
+<header class="hdr">
+  <nav class="wrap nav">
+    <a href="index.html" class="logo">AURUM<span>.</span>JETS</a>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fleet.html">Fleet</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="support.html" class="on">Support</a></li>
+      <li><a href="booking.html" class="btn sm">Charter Now</a></li>
+    </ul>
+    <button class="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <!-- Support Hero -->
+  <section class="page-hero">
+    <div class="wrap stagger">
+      <div class="live-pill">
+        <span class="dot"></span> Flight Operations Desk Live
+      </div>
+      <span class="eyebrow">Always At Your Service</span>
+      <h1>Executive Client <span class="gold">Support</span></h1>
+      <p class="lead">Round-the-clock bespoke assistance. Whether you need immediate dispatch, itinerary changes, ground transport, or luggage logistics, our flight directors are standing by.</p>
+    </div>
+  </section>
+
+  <!-- Support Channels Grid -->
+  <section style="padding-top: 10px; padding-bottom: 70px;">
+    <div class="wrap">
+      <div class="grid3">
+        <div class="card feat reveal">
+          <div class="ic-wrap">📞</div>
+          <h3>24/7 Hotline</h3>
+          <p>Direct priority line to our on-duty flight operations desk. Zero queues, instant escalation.</p>
+          <div style="margin-top: 16px;">
+            <b style="color:var(--gold); font-size:1.2rem; display:block;">+1 (800) 582-AURUM</b>
+            <small style="color:var(--subtle);">Worldwide Toll-Free / Satellite</small>
+          </div>
+        </div>
+
+        <div class="card feat reveal">
+          <div class="ic-wrap">💬</div>
+          <h3>Direct WhatsApp</h3>
+          <p>Instant secure messaging with your assigned personal flight concierge and dispatch.</p>
+          <div style="margin-top: 16px;">
+            <a href="https://wa.me/" target="_blank" rel="noopener" class="btn sm" style="margin-top: 4px;">Open WhatsApp Concierge ✦</a>
+          </div>
+        </div>
+
+        <div class="card feat reveal">
+          <div class="ic-wrap">📍</div>
+          <h3>Global FBO Lounges</h3>
+          <p>Dedicated VIP handling lounges in London Mayfair, Dubai DIFC, Paris Le Bourget, and Teterboro NY.</p>
+          <div style="margin-top: 16px;">
+            <b style="color:var(--w); font-size:1rem; display:block;">Private Apron Access</b>
+            <small style="color:var(--subtle);">Direct ramp transfer in 15 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Message Form & FAQ -->
+  <section style="padding-top: 20px;">
+    <div class="wrap">
+      <div class="support-layout">
+        
+        <!-- Contact Form Box -->
+        <div class="card support-card reveal">
+          <div class="support-card-head">
+            <span class="eyebrow" style="margin-bottom:8px">Secure Dispatch Transmission</span>
+            <h3>Send a Priority Message</h3>
+            <p class="lead" style="font-size:0.95rem;">Average response time is under 12 minutes.</p>
+          </div>
+
+          <form id="supportForm" class="support-form" novalidate>
+            <div class="support-fg">
+              <label class="f">
+                Your Full Name
+                <input class="in" name="name" placeholder="E.g. Lord Edward Sterling" required>
+              </label>
+
+              <label class="f">
+                Email Address
+                <input class="in" type="email" name="email" placeholder="executive@aurum.com" required>
+              </label>
+
+              <label class="f">
+                Direct Phone / WhatsApp
+                <input class="in" type="tel" name="phone" placeholder="+44 20 7946 0912" required>
+              </label>
+
+              <label class="f">
+                Urgency Level
+                <select class="in" name="priority">
+                  <option value="normal">Standard Inquiry (Within 1 hour)</option>
+                  <option value="urgent">Urgent Departure / Wheels Up &lt; 6 hrs</option>
+                  <option value="active-flight">Active Flight / Airborne Guest</option>
+                  <option value="billing">VIP Account Management</option>
+                </select>
+              </label>
+
+              <label class="f full">
+                Flight Reference (Optional)
+                <input class="in" name="flightRef" placeholder="E.g. AUR-8F29A (if modifying existing trip)">
+              </label>
+
+              <label class="f full">
+                Message &amp; Requirements
+                <textarea class="in" name="message" rows="5" placeholder="Specify required assistance, tail changes, catering modifications, or customs clearance..." required></textarea>
+              </label>
+            </div>
+
+            <p class="errmsg" id="supportErr" role="alert"></p>
+
+            <button type="submit" class="btn" style="width:100%; margin-top:10px;">Transmit Priority Message ✦</button>
+          </form>
+
+          <!-- Success Alert -->
+          <div class="support-success" id="supportSuccess" hidden>
+            <div class="ok" style="width:64px;height:64px;font-size:1.8rem;margin:0 auto 16px;">✓</div>
+            <h3>Message Transmitted</h3>
+            <p class="lead" style="margin:8px auto;font-size:0.95rem;">Your priority dispatch ticket has been created. A flight manager will reply via phone and encrypted email immediately.</p>
+            <div class="ref" id="supportTicketRef" style="font-size:1.4rem;margin:12px 0;">TKT-9941</div>
+            <button type="button" class="btn ghost sm" id="resetSupportForm">Send Another Message</button>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="faq-container reveal">
+          <div class="head" style="margin-bottom:32px;">
+            <span class="eyebrow">Frequently Addressed</span>
+            <h2>Client <span class="gold">Assurance</span></h2>
+            <p class="lead" style="font-size:0.95rem;">Clear protocols for every aspect of your journey.</p>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>How fast can an aircraft be airborne for emergency travel?</summary>
+              <div class="faq-content">
+                <p>Through our dedicated operator network with standby crews at key global hubs, we routinely achieve "wheels up" within 3 hours from confirmation and cleared funds.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>What are the luggage allowances and pet travel protocols?</summary>
+              <div class="faq-content">
+                <p>Pets are warmly welcomed in the cabin alongside you without crates on virtually all aircraft. Luggage capacity depends on aircraft size, ranging from 8 full golf sets on midsize to over 20 large designer suitcases on the Gulfstream G700.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>How is guest discretion and passenger privacy handled?</summary>
+              <div class="faq-content">
+                <p>We maintain strict non-disclosure policies. Passenger manifests are processed via end-to-end encrypted servers. Private FBO terminals allow you to step directly from your chauffeur vehicle to the jet steps without entering a public terminal.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Can catering and in-flight entertainment be customized?</summary>
+              <div class="faq-content">
+                <p>Every charter flight includes tailored catering from premier regional restaurants and top-tier cellars. High-speed Starlink Ka-band Wi-Fi is enabled on our long-range fleet for seamless streaming and conference calls.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<button class="back-to-top" aria-label="Scroll back to top">↑</button>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a href="index.html" class="logo">AURUM<span>.</span>JETS</a>
+        <p style="margin-top:16px;max-width:340px">Bespoke private jet charter services, worldwide. Delivering effortless elegance, speed, and discretion for global leaders.</p>
+      </div>
+      <div>
+        <h4>Fleet & Routes</h4>
+        <ul>
+          <li><a href="fleet.html">Heavy Intercontinental</a></li>
+          <li><a href="fleet.html">Super Midsize Jets</a></li>
+          <li><a href="fleet.html">Light Executive Jets</a></li>
+          <li><a href="booking.html">Empty Leg Offers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>24/7 Operations</h4>
+        <ul>
+          <li>concierge@aurumjets.com</li>
+          <li>+1 (800) 582-AURUM</li>
+          <li>Mayfair, London &amp; Dubai DIFC</li>
+          <li><a href="support.html" style="color:var(--gold);">Client Support Center</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Private Dispatch</h4>
+        <p style="font-size:0.85rem;margin-bottom:12px">Receive confidential updates on new fleet additions and empty-leg availability.</p>
+        <form class="newsletter-box" id="footerNewsletter">
+          <input type="email" placeholder="Enter your email" aria-label="Email for dispatch updates" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="copy">
+      <p>© 2026 AURUM Jets International. All rights reserved. Vetted Air Carrier Broker.</p>
+      <p>ARG/US Platinum Certified · Wyvern Wingman Partner</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

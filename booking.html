@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserve Your Flight — AURUM Jets</title>
+<meta name="description" content="Request your private jet charter in four seamless steps. Receive confirmed itinerary pricing from a dedicated flight manager.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+
+<header class="hdr">
+  <nav class="wrap nav">
+    <a href="index.html" class="logo">AURUM<span>.</span>JETS</a>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fleet.html">Fleet</a></li>
+      <li><a href="booking.html" class="on">Booking</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="booking.html" class="btn sm">Charter Now</a></li>
+    </ul>
+    <button class="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <!-- Booking Hero Header -->
+  <section class="page-hero">
+    <div class="wrap stagger">
+      <span class="eyebrow">Flight Concierge</span>
+      <h1>Request a <span class="gold">Charter</span></h1>
+      <p class="lead">Four simple steps to secure your private aircraft. A dedicated flight manager will confirm your itinerary within 45 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Multi-Step Booking Form -->
+  <section style="padding-top: 20px">
+    <div class="wrap">
+      <form class="bk reveal" id="bookForm" novalidate>
+        
+        <!-- Progress Bar Indicator -->
+        <div class="prog" role="tablist">
+          <i></i>
+          <div class="dot on"><em>1</em><span>Route</span></div>
+          <div class="dot"><em>2</em><span>Aircraft</span></div>
+          <div class="dot"><em>3</em><span>Passenger</span></div>
+          <div class="dot"><em>4</em><span>Review</span></div>
+        </div>
+
+        <!-- Step 1: Routing & Dates -->
+        <div class="step on">
+          <h2>1. Where are you flying?</h2>
+          <div class="fg">
+            <div class="full seg" id="tripSeg">
+              <button type="button" class="chip on" data-trip="One way">One Way</button>
+              <button type="button" class="chip" data-trip="Round trip">Round Trip</button>
+              <button type="button" class="chip" data-trip="Multi-city">Multi-Leg Tour</button>
+            </div>
+            
+            <label class="f">
+              Departure Airfield / City
+              <div class="in-wrap">
+                <span class="in-icon">🛫</span>
+                <input class="in" name="from" placeholder="E.g. London Farnborough (EGLF)" required>
+              </div>
+            </label>
+            
+            <label class="f">
+              Arrival Destination
+              <div class="in-wrap">
+                <span class="in-icon">🛬</span>
+                <input class="in" name="to" placeholder="E.g. Nice Côte d'Azur (LFMN)" required>
+              </div>
+            </label>
+            
+            <label class="f">
+              Departure Date
+              <div class="in-wrap">
+                <input class="in" type="date" name="date" required>
+              </div>
+            </label>
+            
+            <label class="f">
+              Total Passengers
+              <div class="in-wrap">
+                <select class="in" name="pax">
+                  <option value="1">1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="4" selected>4 Passengers</option>
+                  <option value="6">6 Passengers</option>
+                  <option value="8">8 Passengers</option>
+                  <option value="10">10 Passengers</option>
+                  <option value="12">12 Passengers</option>
+                  <option value="16">16+ Passengers</option>
+                </select>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 2: Aircraft Selection -->
+        <div class="step">
+          <h2>2. Choose your preferred jet</h2>
+          <p class="lead" style="margin-bottom:24px;font-size:1rem">Select the aircraft tier that best suits your travel party, range requirements, and cabin expectations.</p>
+          <div class="opts" id="jetOpts"></div>
+        </div>
+
+        <!-- Step 3: Passenger & Service Details -->
+        <div class="step">
+          <h2>3. Lead passenger &amp; preferences</h2>
+          <div class="fg">
+            <label class="f full">
+              Full Legal Name
+              <input class="in" name="name" placeholder="As written on passport" required minlength="3">
+            </label>
+            
+            <label class="f">
+              Corporate / Direct Email
+              <input class="in" type="email" name="email" placeholder="executive@company.com" required>
+            </label>
+            
+            <label class="f">
+              Direct Phone / WhatsApp
+              <input class="in" type="tel" name="phone" placeholder="+1 (555) 000-0000" required minlength="7">
+            </label>
+            
+            <label class="f full">
+              Special Catering, Chauffeur &amp; Pet Requirements
+              <textarea class="in" name="notes" rows="4" placeholder="Michelin dining requests, vintage champagne, tarmac limousine transfers, pet transport, security team..."></textarea>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 4: Summary & Confirmation -->
+        <div class="step">
+          <h2>4. Review your itinerary</h2>
+          <div class="sum" id="sum"></div>
+          <p class="lead" style="margin-top:22px;font-size:0.92rem;color:var(--subtle)">
+            * This submission is an expedited flight reservation inquiry. Your assigned private flight manager will contact you within 45 minutes with confirmed tail numbers and direct contract pricing.
+          </p>
+        </div>
+
+        <!-- Submission Success State -->
+        <div class="step" id="done">
+          <div class="done">
+            <div class="ok">✓</div>
+            <h2>Reservation Inquiry Received</h2>
+            <p class="lead" style="margin: 0 auto">
+              Your flight dossier has been transmitted to our 24/7 flight operations center. A dedicated flight director is preparing your custom flight brief.
+            </p>
+            <div class="ref-box">
+              <small>Charter Reference Code</small>
+              <div class="ref" id="ref">AUR-XXXXXX</div>
+            </div>
+            <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+              <a href="index.html" class="btn">Return to Home</a>
+              <a href="fleet.html" class="btn ghost">Browse Full Fleet</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Feedback & Navigation Actions -->
+        <p class="errmsg" id="err" role="alert"></p>
+        
+        <div class="actions">
+          <button type="button" class="btn ghost" id="back">← Previous Step</button>
+          <button type="button" class="btn" id="next">Continue →</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<button class="back-to-top" aria-label="Scroll back to top">↑</button>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a href="index.html" class="logo">AURUM<span>.</span>JETS</a>
+        <p style="margin-top:16px;max-width:340px">Bespoke private jet charter services, worldwide. Delivering effortless elegance, speed, and discretion for global leaders.</p>
+      </div>
+      <div>
+        <h4>Fleet & Routes</h4>
+        <ul>
+          <li><a href="fleet.html">Heavy Intercontinental</a></li>
+          <li><a href="fleet.html">Super Midsize Jets</a></li>
+          <li><a href="fleet.html">Light Executive Jets</a></li>
+          <li><a href="booking.html">Empty Leg Offers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>24/7 Operations</h4>
+        <ul>
+          <li>concierge@aurumjets.com</li>
+          <li>+1 (800) 582-AURUM</li>
+          <li>Mayfair, London &amp; Dubai DIFC</li>
+          <li><a href="support.html" style="color:var(--gold);">Client Support Center</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Private Dispatch</h4>
+        <p style="font-size:0.85rem;margin-bottom:12px">Receive confidential updates on new fleet additions and empty-leg availability.</p>
+        <form class="newsletter-box" id="footerNewsletter">
+          <input type="email" placeholder="Enter your email" aria-label="Email for dispatch updates" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="copy">
+      <p>© 2026 AURUM Jets International. All rights reserved. Vetted Air Carrier Broker.</p>
+      <p>ARG/US Platinum Certified · Wyvern Wingman Partner</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Private Fleet — AURUM Jets</title>
+<meta name="description" content="Explore the AURUM Jets curated fleet: light, midsize and heavy intercontinental jets available for worldwide bespoke charter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+
+<header class="hdr">
+  <nav class="wrap nav">
+    <a href="index.html" class="logo">AURUM<span>.</span>JETS</a>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fleet.html" class="on">Fleet</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="booking.html" class="btn sm">Charter Now</a></li>
+    </ul>
+    <button class="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <!-- Fleet Hero Header -->
+  <section class="page-hero">
+    <div class="wrap stagger">
+      <span class="eyebrow">The Curated Fleet</span>
+      <h1>Aircraft <span class="gold">Without Equal</span></h1>
+      <p class="lead">From agile regional light aircraft to intercontinental living suites. Filter by category, inspect specifications, and reserve in minutes.</p>
+    </div>
+  </section>
+
+  <!-- Filter & Aircraft Gallery -->
+  <section style="padding-top: 20px">
+    <div class="wrap">
+      <div class="filters reveal" id="filters">
+        <button class="chip on" data-filter="all">All Aircraft (6)</button>
+        <button class="chip" data-filter="heavy">Heavy &amp; Long Range</button>
+        <button class="chip" data-filter="midsize">Super-Midsize</button>
+        <button class="chip" data-filter="light">Light &amp; Regional</button>
+      </div>
+      
+      <div class="bento" id="bento"></div>
+      
+      <div class="empty" id="empty" hidden>
+        <p>No aircraft matching the selected category at this time.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Fleet Advantage Banner -->
+  <section>
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="eyebrow">Bespoke Specifications</span>
+        <h2>Need a Customized <span class="gold">Configuration?</span></h2>
+        <p class="lead" style="margin: 0 auto">If your mission demands ultra-specialized medical transport, diplomatic seating, or transatlantic cargo capacity, our air operations group can secure specialized airframes within hours.</p>
+        <a href="booking.html" class="btn">Speak to Flight Concierge ✦</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Details Modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Aircraft details">
+  <div class="mbox">
+    <button class="mclose" aria-label="Close modal">✕</button>
+    <div id="mbody"></div>
+  </div>
+</div>
+
+<button class="back-to-top" aria-label="Scroll back to top">↑</button>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a href="index.html" class="logo">AURUM<span>.</span>JETS</a>
+        <p style="margin-top:16px;max-width:340px">Bespoke private jet charter services, worldwide. Delivering effortless elegance, speed, and discretion for global leaders.</p>
+      </div>
+      <div>
+        <h4>Fleet & Routes</h4>
+        <ul>
+          <li><a href="fleet.html">Heavy Intercontinental</a></li>
+          <li><a href="fleet.html">Super Midsize Jets</a></li>
+          <li><a href="fleet.html">Light Executive Jets</a></li>
+          <li><a href="booking.html">Empty Leg Offers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>24/7 Operations</h4>
+        <ul>
+          <li>concierge@aurumjets.com</li>
+          <li>+1 (800) 582-AURUM</li>
+          <li>Mayfair, London &amp; Dubai DIFC</li>
+          <li><a href="support.html" style="color:var(--gold);">Client Support Center</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Private Dispatch</h4>
+        <p style="font-size:0.85rem;margin-bottom:12px">Receive confidential updates on new fleet additions and empty-leg availability.</p>
+        <form class="newsletter-box" id="footerNewsletter">
+          <input type="email" placeholder="Enter your email" aria-label="Email for dispatch updates" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="copy">
+      <p>© 2026 AURUM Jets International. All rights reserved. Vetted Air Carrier Broker.</p>
+      <p>ARG/US Platinum Certified · Wyvern Wingman Partner</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
